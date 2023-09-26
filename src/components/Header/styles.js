@@ -7,6 +7,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 12.4rem;
+
+  > h1 {
+    font-size: 2.4rem;
+    color: ${({theme}) => theme.COLORS.COLOR_BRAND};
+  }
 `
 
 export const Profile = styled.div`
