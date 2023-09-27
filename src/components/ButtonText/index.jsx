@@ -3,7 +3,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 export function ButtonText({title, ...rest}) {
   return(
-    <Container {...rest}>
+    <Container {...rest} type="button">
       <FiArrowLeft/>
       {title}
     </Container>

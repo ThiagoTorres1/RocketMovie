@@ -1,11 +1,12 @@
 import { Container } from "./styles";
 
-export function Tags({title, isHome, ...rest}) {
+export function Button({title, icon: Icon, ...rest}) {
   return(
     <Container
-      $ishome={isHome}
+      type="button"
       {...rest}
-     >
+    >
+      {Icon && <Icon/>}
       {title}
     </Container>
   )

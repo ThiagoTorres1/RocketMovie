@@ -11,10 +11,10 @@ export function Preview() {
       <Header></Header>
       <main>
         <Content>
-          <ButtonText title="Voltar" type="button"/>
+          <ButtonText title="Voltar"/>
           <Title>
             <h1>Interstellar</h1>
-            <Star/>
+            <Star isHigh/>
           </Title>
           <Description>
             <div>

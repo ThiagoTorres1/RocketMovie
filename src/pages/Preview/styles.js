@@ -18,7 +18,7 @@ export const Content = styled.div`
   max-width: 113rem; 
   margin: 0 auto;
   > p:nth-child(7){
-    margin-top: 4rem;
+    margin-block: 4rem;
     text-align: justify;
   }
 `
