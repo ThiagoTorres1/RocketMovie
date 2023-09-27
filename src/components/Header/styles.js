@@ -6,7 +6,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 6.4rem;
   padding: 0 12.4rem;
+  border-bottom: 1px solid ${({theme}) => theme.COLORS.BACKGROUND_600};
 
   > h1 {
     font-size: 2.4rem;
@@ -18,6 +20,9 @@ export const Profile = styled.div`
   display: flex;
   gap: .8rem;
   align-items: center;
+  justify-content: end;
+  min-width: clamp(17rem, 5rem + 10vw, 20rem);
+
 
   > div {
     display: flex;
