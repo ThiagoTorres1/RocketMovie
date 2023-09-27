@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 1rem;
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
+  margin-bottom: .8rem;
 
   > input {
     width: 100%;
@@ -22,5 +23,6 @@ export const Container = styled.div`
 
   > svg {
     margin-left: 1.6rem;
+    color: ${({theme}) => theme.COLORS.GRAY_300};
   }
 `

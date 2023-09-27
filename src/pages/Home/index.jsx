@@ -1,6 +1,5 @@
-import { Container, Content, Title } from "./styles";
+import { Container, Content, Title, HeroButton } from "./styles";
 import { Header } from '../../components/Header'
-import { Button } from '../../components/Button'
 import { Note } from '../../components/Note'
 import { MdAdd } from 'react-icons/md'
 
@@ -12,7 +11,10 @@ export function Home() {
         <Content>
           <Title>
             <h1>Meus filmes</h1>
-            <Button icon={MdAdd} title="Adicionar filme"/>
+            <HeroButton>
+              <MdAdd/>
+              Adicionar filme
+            </HeroButton>
           </Title>
           <Note 
             data={

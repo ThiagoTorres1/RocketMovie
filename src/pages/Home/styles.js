@@ -24,3 +24,19 @@ export const Title = styled.div`
   justify-content: space-between;
   margin-bottom: 4rem;
 `
+
+export const HeroButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  background-color: ${({theme}) => theme.COLORS.COLOR_BRAND};
+  color: ${({theme}) => theme.COLORS.BACKGROUND_BODY};
+  border: none;
+  border-radius: .8rem;
+  padding: 1.6rem 3.2rem;
+
+  > svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+`
