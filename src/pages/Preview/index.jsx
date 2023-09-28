@@ -1,6 +1,7 @@
 import {Container, Content, Title, Description} from './styles'
 import { Header } from '../../components/Header'
 import { ButtonText } from '../../components/ButtonText'
+import { Scrollbar } from '../../components/Scrollbar'
 import { Star } from '../../components/Star'
 import { Tags } from '../../components/Tags'
 import { FiClock } from 'react-icons/fi'
@@ -9,7 +10,7 @@ export function Preview() {
   return(
     <Container>
       <Header></Header>
-      <main>
+      <Scrollbar>
         <Content>
           <ButtonText title="Voltar"/>
           <Title>
@@ -36,7 +37,7 @@ export function Preview() {
             Além de Cooper, a tripulação da Endurance é formada pela bióloga Amelia, filha de Brand; o cientista Romilly, o físico planetário Doyle, além dos robôs TARS e CASE. Eles entram no buraco de minhoca e se dirigem a Miller, porém descobrem que o planeta possui enorme dilatação gravitacional temporal por estar tão perto de Gargântua: cada hora na superfície equivale a sete anos na Terra. Eles entram em Miller e descobrem que é inóspito já que é coberto por um oceano raso e agitado por ondas enormes. Uma onda atinge a tripulação enquanto Amelia tenta recuperar os dados de Miller, matando Doyle e atrasando a partida. Ao voltarem para a Endurance, Cooper e Amelia descobrem que 23 anos se passaram.
           </p>
         </Content>
-      </main>
+      </Scrollbar>
     </Container>
   )
 }

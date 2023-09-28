@@ -7,11 +7,6 @@ export const Container = styled.div`
   grid-template-rows: 11.6rem auto;
   grid-template-areas: "header" "content";
   gap: 4rem;
-
-  > main {
-    grid-area: content;
-    overflow-y: auto;
-  }
 `
 
 export const Form = styled.form`

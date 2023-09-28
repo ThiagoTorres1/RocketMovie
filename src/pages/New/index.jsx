@@ -4,13 +4,14 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 import { Textarea } from '../../components/Textarea'
 import { NoteItem } from '../../components/NoteItem'
+import { Scrollbar } from '../../components/Scrollbar'
 import { Container, Form, Section } from './styles'
 
 export function New() {
   return(
     <Container>
       <Header />
-      <main>
+      <Scrollbar>
         <Form>
           <header>
             <ButtonText title="Voltar"/>
@@ -31,7 +32,7 @@ export function New() {
             <Button title="Salvar alterações"/>
           </div>
         </Form>
-      </main>
+      </Scrollbar>
     </Container>
   )
 }
