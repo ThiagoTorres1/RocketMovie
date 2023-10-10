@@ -13,7 +13,7 @@ export function SignIn() {
         <Input icon={FiMail} placeholder="E-mail" type="text"/>
         <Input icon={FiLock} placeholder="Senha" type="password"/>
         <Button title="Entrar"/>
-        <a href="#">Criar conta</a>
+        <a href="register">Criar conta</a>
       </Form>
       <Background/>
     </Container>
