@@ -33,7 +33,9 @@ export const Profile = styled.div`
       font-size: 1.4rem;
     }
 
-    a {
+    button {
+      background: none;
+      border: none;
       font-size: 1.4rem;
       color: ${({theme}) => theme.COLORS.GRAY_300};
     }
