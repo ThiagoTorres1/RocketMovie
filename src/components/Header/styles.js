@@ -10,9 +10,11 @@ export const Container = styled.div`
   padding: 0 12.4rem;
   border-bottom: 1px solid ${({theme}) => theme.COLORS.BACKGROUND_600};
 
-  > h1 {
-    font-size: 2.4rem;
-    color: ${({theme}) => theme.COLORS.COLOR_BRAND};
+  > a {
+    h1 {
+      font-size: 2.4rem;
+      color: ${({theme}) => theme.COLORS.COLOR_BRAND};
+    }
   }
 `
 
@@ -21,7 +23,7 @@ export const Profile = styled.div`
   gap: .8rem;
   align-items: center;
   justify-content: end;
-  min-width: clamp(17rem, 5rem + 10vw, 20rem);
+  min-width: clamp(17rem, 5rem + 10vw, 22rem);
 
 
   > div {
@@ -41,9 +43,11 @@ export const Profile = styled.div`
     }
   }
 
-  > img {
+  > a {
+    img {
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
   }  
+  }
 `

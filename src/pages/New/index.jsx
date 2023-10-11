@@ -6,15 +6,22 @@ import { Textarea } from '../../components/Textarea'
 import { NoteItem } from '../../components/NoteItem'
 import { Scrollbar } from '../../components/Scrollbar'
 import { Container, Form, Section } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export function New() {
+  const navigate = useNavigate()
+
+  function handleBack() {
+    navigate(-1)
+  }
+
   return(
     <Container>
       <Header />
       <Scrollbar>
         <Form>
           <header>
-            <ButtonText title="Voltar"/>
+            <ButtonText title="Voltar" onClick={handleBack}/>
             <h1>Novo filme</h1>
           </header>
           <div className='flex'>

@@ -3,8 +3,33 @@ import { Header } from '../../components/Header'
 import { Note } from '../../components/Note'
 import { Scrollbar } from '../../components/Scrollbar'
 import { MdAdd } from 'react-icons/md'
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api"
 
 export function Home() {
+  const navigate = useNavigate()
+  const { title } = useAuth()
+  const [notes, setNotes] = useState([])
+ 
+
+  function handleNew() {
+    navigate("/new")
+  }
+
+  function handleInformationNote(id) {
+    navigate(`/preview/${id}`)
+  }
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${title}`)
+      setNotes(response.data)
+    }
+    fetchNotes()
+  }, [title])
+
   return(
     <Container>
       <Header/>
@@ -12,20 +37,20 @@ export function Home() {
         <Content>
           <Title>
             <h1>Meus filmes</h1>
-            <HeroButton>
+            <HeroButton onClick={handleNew}>
               <MdAdd/>
               Adicionar filme
             </HeroButton>
           </Title>
-          <Note 
-            data={
-              {
-                title: "Interstelar",
-                description: "Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se ",
-                tags: [{id: "1", name: "Ficção científica"}, {id: "2", name: "Drama"}],
-              }
-            }
-          />
+          {
+            notes.map(note => (
+            <Note 
+              key={String(note.id)}
+              data={note}
+              onClick={() => handleInformationNote(note.id)}
+            />
+          ))
+          }
         </Content>
       </Scrollbar>
     </Container>

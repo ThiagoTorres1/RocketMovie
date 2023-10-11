@@ -1,21 +1,39 @@
 import { Container, Profile } from "./styles";
 import {Input} from '../Input';
 import { useAuth } from "../../hooks/auth";
+import { useNavigate } from "react-router-dom";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+import { api } from "../../services/api";
+import { useEffect, useState } from "react";
 
 export function Header() {
-  const { signOut } = useAuth()
+  const { signOut, user, setTitle } = useAuth()
+  const navigate = useNavigate()
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
+ 
   function handleSignOut() {
     signOut()
+    navigate("/")
+  }
+
+  function sendSearch(e) {
+    const send = e.target.value
+    setTitle(send)
   }
   
   return(
     <Container>
-      <h1>RocketMovies</h1>
-      <Input placeholder="Pesquise pelo título"/>
+      <a href="/">
+        <h1>RocketMovies</h1>
+      </a>
+      <Input 
+        placeholder="Pesquise pelo título"
+        onChange={sendSearch}
+      />
       <Profile>
         <div>
-          <strong>Thiago Torres</strong>
+          <strong>{user.name}</strong>
           <button 
             type="button"
             onClick={handleSignOut}
@@ -23,7 +41,11 @@ export function Header() {
             Sair
           </button>
         </div>
-        <img src="https://github.com/thiagotorres1.png" alt="Imagem de perfil" />
+        <a 
+          href="/profile"
+        >
+          <img src={avatarUrl} alt="Imagem de perfil" />
+        </a>
       </Profile>
     </Container>
   )

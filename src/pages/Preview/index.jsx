@@ -5,26 +5,55 @@ import { Scrollbar } from '../../components/Scrollbar'
 import { Star } from '../../components/Star'
 import { Tags } from '../../components/Tags'
 import { FiClock } from 'react-icons/fi'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useAuth } from '../../hooks/auth'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
+
 
 export function Preview() {
+  const { user } = useAuth()
+  const params = useParams()
+  const navigate = useNavigate()
+  const [movie, setMovie] = useState([])
+  const date = movie.created_at
+
+  function handleBack() {
+    navigate(-1)
+  }
+
+  useEffect(() => {
+    async function fetchMovie() {
+      const response = await api.get(`/notes/${params.id}`)
+      setMovie(response.data)
+    }
+    fetchMovie()
+  }, [])
+
   return(
     <Container>
-      <Header></Header>
+      <Header/>
       <Scrollbar>
         <Content>
-          <ButtonText title="Voltar"/>
+          <ButtonText 
+            title="Voltar"
+            onClick={handleBack}
+          />
           <Title>
-            <h1>Interstellar</h1>
+            <h1>{movie.title}</h1>
             <Star isHigh/>
           </Title>
           <Description>
             <div>
               <img src="https://github.com/thiagotorres1.png" alt="Imagem do usuário" />
-              <p>Por Thiago Torres</p>
+              <p>{user.name}</p>
             </div>
             <div>
               <FiClock/>
-              <p>23/05/22 às 08:00</p>
+              <p>{
+                // 23/05/22 às 08:00
+                date
+              }</p>
             </div>
           </Description>
           <Tags title="Ficção Científica"/>
