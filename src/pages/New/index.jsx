@@ -40,8 +40,12 @@ export function New() {
       return alert("Você precisa informar a nota")
     }
 
+    if(rating > 5 || rating < 0) {
+      return alert("Você precisa informar uma nota válida")
+    }
+
     if(newTag) {
-      return ("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
+      return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio")
     }
 
     await api.post("/notes", {
