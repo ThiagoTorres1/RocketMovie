@@ -13,7 +13,7 @@ import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
 
 export function Preview() {
-  const { user, setRating } = useAuth()
+  const { user } = useAuth()
   const params = useParams()
   const navigate = useNavigate()
   const [movie, setMovie] = useState([])
@@ -52,7 +52,7 @@ export function Preview() {
           />
           <Title>
             <h1>{movie.title}</h1>
-            <Star isHigh/>
+            <Star rating={movie.rating} isHigh/>
           </Title>
           <Description>
             <div>
