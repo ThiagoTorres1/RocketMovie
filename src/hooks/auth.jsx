@@ -6,6 +6,7 @@ const AuthContext = createContext({})
 function AuthProvider({children}) {
   const [data, setData] = useState({})
   const [title, setTitle] = useState("")
+  const [rating, setRating] = useState("")
 
   async function signIn({email, password}) {
     try {
@@ -76,6 +77,8 @@ function AuthProvider({children}) {
       updateProfile,
       setTitle,
       title,
+      setRating,
+      rating,
       user: data.user
     }}>
       {children}

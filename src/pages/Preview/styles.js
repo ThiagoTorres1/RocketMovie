@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   max-width: 113rem; 
   margin: 0 auto;
-  > p:nth-child(7){
+  > p {
     margin-block: 4rem;
     text-align: justify;
   }
